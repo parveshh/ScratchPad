@@ -1,0 +1,71 @@
+html,body{
+   height: 100%;
+}
+    .sideBar {
+    position: absolute;
+      top:53px;
+        width: 18%;
+        left: 0;
+        padding: 10px;
+       
+        background-color: #FAFAFA;
+        height: 100%;
+       
+        /*#FAFAFA,#F3F3F3,#E7412A,#FFFFFF,#EDEDED,#564F4D,#8DA600,#0EA7B5*/
+    }
+    
+    .scratchPads {
+        margin: 5px;
+    }
+    
+  .createScratchPad h4,  .scratchPads h4 {
+        font-size: 15px;
+        font-weight: bold;
+        color: #8DA600;        
+    }
+    
+    .scratchPads ul {
+        margin-top: 8px;
+       width: 100%;
+        list-style: none;
+        padding: 5px;
+    }
+    
+    .scratchPads ul li {
+       
+         display: block;
+        list-style: none;
+        color: #E7412A;
+        width: 100%;
+        text-align: left;
+        padding: 8px;
+        cursor: hand;
+        border-radius: 5px;
+    
+    }
+
+    .scratchPads a{
+        color: #564F4D;
+        padding: 5px;
+              text-align: left;
+              width: 100%;
+    }
+.scratchPads ul li:hover{
+       background-color: #EDEDED;
+    }
+    .scratchPads ul li:hover a{
+       color: #564F4D;
+    }
+    .createScratchPad{   
+    width: 100%;
+   
+        padding: 10px;
+        border-top: 1px solid #EDEDED;
+   
+       
+    
+    }
+
+    #description{
+        height: 100px;
+    }
