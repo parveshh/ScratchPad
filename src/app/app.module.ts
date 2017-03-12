@@ -18,11 +18,11 @@ import { PadService } from "./services/PadService";
 import { BaseService } from "./services/BaseService";
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyCCE6cIsKJC_4W3ruFMEGMVz93nCXI15iw",
-    authDomain: "logsreader-3a436.firebaseapp.com",
-    databaseURL: "https://logsreader-3a436.firebaseio.com",
-    storageBucket: "logsreader-3a436.appspot.com",
-    messagingSenderId: "1009410504127"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 
 @NgModule({
