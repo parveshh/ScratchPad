@@ -11,18 +11,17 @@ import { NavComponent } from "./sharedcomponents/nav.component";
 import { RegisterComponent } from "./register/register.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { IAppState, rootReducer, InitialState } from "./StateStore/Store";
-import { userReducer } from "./StateStore/Reducers/UsersReducer";
 import { HomeComponent } from "./home/home.component";
 import { SidebarComponent } from "./home/sections/sidebar.component";
 import { PadService } from "./services/PadService";
-import { BaseService } from "./services/BaseService";
+import { AuthService } from "./services/AuthService";
 
 export const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: "AIzaSyDGHDQtbybtNFr3JuvKj8WZv0s4obzgHh0",
+    authDomain: "scratchpad-6a770.firebaseapp.com",
+    databaseURL: "https://scratchpad-6a770.firebaseio.com",
+    storageBucket: "scratchpad-6a770.appspot.com",
+    messagingSenderId: "273778873543"
 };
 
 @NgModule({
@@ -36,7 +35,7 @@ export const firebaseConfig = {
     declarations: [AppComponent, LoginComponent,
         NavComponent, RegisterComponent, HomeComponent, SidebarComponent],
     bootstrap: [AppComponent],
-    providers: [UserService, PadService]
+    providers: [UserService, PadService, AuthService]
 
 
 })

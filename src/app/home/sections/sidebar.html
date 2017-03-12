@@ -1,12 +1,13 @@
 <section name="sideBar">
     <div class="sideBar row-fluid">
+        <h4>My ScratchPads</h4>
         <div class="scratchPads">
-            <h4>My ScratchPads</h4>
+
             <ul>
-                <li *ngFor="let pad of myscratchPads|async">
+                <li *ngFor="let pad of (myscratchPads|async)">
                     <a href="#">{{pad.title}}</a>
                 </li>
-                
+
             </ul>
         </div>
         <div class="createScratchPad">
@@ -20,10 +21,14 @@
             <div class="form-group">
                 <button class="btn btn-success" (click)="onCreatePad();">Save</button>
             </div>
-            <div class="form-group">
-                <strong *ngIf="errors | async" class="label label-warning"> {{errors | async}} </strong>
-                <strong *ngIf="message | async" class="label label-success"> {{message | async}} </strong>
+            <div *ngIf="errors | async" class="form-group">
+                <strong> {{errors | async}} </strong>
+
             </div>
+            <div class="form-group">
+                <strong> {{message | async}} </strong>
+            </div>
+
         </div>
     </div>
 </section>

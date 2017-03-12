@@ -4,6 +4,8 @@ import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
 import { PadService } from "../../services/PadService";
 import { ScratchPad } from "../../models/scratchpad";
+import { select } from "@angular-redux/store/lib";
+import { IAppState } from "../../StateStore/Store";
 @Component({
 
     selector: 'sidebar',
@@ -15,27 +17,39 @@ import { ScratchPad } from "../../models/scratchpad";
 export class SidebarComponent extends BaseComponent {
     errors: Subject<string> = new Subject<string>();
     message: Subject<string> = new Subject<string>();
-
+    @select('user') stateUser: Observable<any>;
+    user: any;
     myscratchPads: Observable<ScratchPad[]>;
     public model: ScratchPad = {
         description: '', id: '', key: '', title: ''
     };
+
     constructor(private padService: PadService) {
         super();
+
+    }
+
+    Init = (u): void => {
+
+        this.myscratchPads = this.padService.getScratchPads(u.uid);
+        this.user = u;
     }
     ngOnInit() {
-        this.myscratchPads = this.padService.getScratchPads();
+        this.subscriptions.push(this.stateUser.subscribe(this.Init));
     }
-    onCreatePad(): void {
+    public onCreatePad(): void {
 
-        if (this.model.description != '' && this.model.title != '') {
-
-            this.padService.createPad(this.model).then((response) => {
-               
+        if (this.model.description.trim() != '' && this.model.title.trim() != '') {
+            this.errors.next('');
+            this.padService.createPad(this.model, this.user.uid).then((response) => {
+                console.log(response);
                 this.message.next("Pad created..scribble now");
                 setTimeout(() => {
                     this.message.next('');
-                }), 2000;
+                }, 2000);
+
+                this.model.description = '';
+                this.model.title = '';
             },
                 (error) => this.errors.next(error.message));
         } else {

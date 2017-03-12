@@ -16,9 +16,22 @@ html,body{
     
     .scratchPads {
         margin: 5px;
+        max-height: 300px;
+        overflow: auto;
     }
+    .scratchPads::-webkit-scrollbar{
+            width:5px;
+    }
+    .scratchPads::-webkit-scrollbar-track {
+    -box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+}
+ 
+.scratchPads::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
     
-  .createScratchPad h4,  .scratchPads h4 {
+ .sideBar h4, .createScratchPad h4,  .scratchPads h4 {
         font-size: 15px;
         font-weight: bold;
         color: #8DA600;        

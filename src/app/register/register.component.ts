@@ -42,9 +42,9 @@ export class RegisterComponent extends BaseComponent {
                 username: [this.model.username, [Validators.required, Validators.minLength(6)]],
                 password: [this.model.password, [Validators.required, Validators.minLength(6)]],
                 confirmPassword: [this.model.confirmPassword, [Validators.required, Validators.minLength(6)]],
-                displayName: [this.model.display, [Validators.required, Validators.minLength(6)],
-                { validator: matchingPasswords('password', 'confirmPassword') }]
-            });
+                displayName: [this.model.display, [Validators.required, Validators.minLength(6)]]
+                
+            },{validator: matchingPasswords('password', 'confirmPassword')});
         }
         catch (error) {
             console.log(error);

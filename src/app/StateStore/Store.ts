@@ -13,7 +13,7 @@ export interface IAppState {
 }
 
 export const InitialState: IAppState = {
-    user: null,
+    user:null,
     presence: false
 }
 

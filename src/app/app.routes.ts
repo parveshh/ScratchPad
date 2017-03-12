@@ -4,6 +4,7 @@ import { Routes } from "@angular/router";
 import { NavComponent } from './sharedcomponents/nav.component';
 import { RegisterComponent } from "./register/register.component";
 import { HomeComponent } from "./home/home.component";
+import { AuthService } from "./services/AuthService";
 
 export class RouteConfig {
     public static appRoutes: Routes = [{
@@ -24,7 +25,7 @@ export class RouteConfig {
         component: HomeComponent,
         children: [
             { path: '', component: NavComponent, outlet: "navbar" }
-        ]
+        ], canActivate: [AuthService]
     }
     ];
     constructor() { }

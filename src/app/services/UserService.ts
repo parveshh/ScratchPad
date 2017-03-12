@@ -1,4 +1,4 @@
-import { AngularFire, FirebaseAuthState, FirebaseListObservable, AuthMethods, AuthProviders, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseAuthState, FirebaseListObservable, AuthMethods, AuthProviders, FirebaseObjectObservable, AngularFireAuth } from 'angularfire2';
 import { User } from "../models/usermodel";
 import { Injectable } from "@angular/core";
 import { RegisterModel } from "../models/resgitermodel";
@@ -30,7 +30,7 @@ export class UserService extends BaseService {
     public CreateExpense(expense: ExpenseModel): Thenable<any> {
 
         var currentUser = this._database.auth.getAuth().auth.uid;
-        
+
         var currentDate = Date.parse(expense.when);
 
 
@@ -71,7 +71,7 @@ export class UserService extends BaseService {
 
     }
 
-    public getAuth(): Observable<any> {
+    public getAuth(): Observable<FirebaseAuthState> {
         return this._database.auth.asObservable();
     }
 
