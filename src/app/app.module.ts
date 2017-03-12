@@ -17,11 +17,6 @@ import { PadService } from "./services/PadService";
 import { AuthService } from "./services/AuthService";
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyDGHDQtbybtNFr3JuvKj8WZv0s4obzgHh0",
-    authDomain: "scratchpad-6a770.firebaseapp.com",
-    databaseURL: "https://scratchpad-6a770.firebaseio.com",
-    storageBucket: "scratchpad-6a770.appspot.com",
-    messagingSenderId: "273778873543"
 };
 
 @NgModule({
