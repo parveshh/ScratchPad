@@ -1,0 +1,29 @@
+<section name="sideBar">
+    <div class="sideBar row-fluid">
+        <div class="scratchPads">
+            <h4>My ScratchPads</h4>
+            <ul>
+                <li *ngFor="let pad of myscratchPads|async">
+                    <a href="#">{{pad.title}}</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="createScratchPad">
+            <h4>Create Scratchpad</h4>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="model.title" placeholder="Scratchpad Name">
+            </div>
+            <div class="form-group">
+                <textarea id="description" name="description" [(ngModel)]="model.description" class="form-control" placeholder="Describe your Scratchpad"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" (click)="onCreatePad();">Save</button>
+            </div>
+            <div class="form-group">
+                <strong *ngIf="errors | async" class="label label-warning"> {{errors | async}} </strong>
+                <strong *ngIf="message | async" class="label label-success"> {{message | async}} </strong>
+            </div>
+        </div>
+    </div>
+</section>

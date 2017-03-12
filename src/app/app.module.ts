@@ -13,6 +13,9 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { IAppState, rootReducer, InitialState } from "./StateStore/Store";
 import { userReducer } from "./StateStore/Reducers/UsersReducer";
 import { HomeComponent } from "./home/home.component";
+import { SidebarComponent } from "./home/sections/sidebar.component";
+import { PadService } from "./services/PadService";
+import { BaseService } from "./services/BaseService";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCCE6cIsKJC_4W3ruFMEGMVz93nCXI15iw",
@@ -31,9 +34,9 @@ export const firebaseConfig = {
         FormsModule
     ],
     declarations: [AppComponent, LoginComponent,
-        NavComponent, RegisterComponent, HomeComponent],
+        NavComponent, RegisterComponent, HomeComponent, SidebarComponent],
     bootstrap: [AppComponent],
-    providers: [UserService]
+    providers: [UserService, PadService]
 
 
 })

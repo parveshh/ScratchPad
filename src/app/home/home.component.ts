@@ -9,8 +9,7 @@ import { Actions, PresenceActions } from "../StateStore/Actions/Actions";
 
 @Component({
     selector: "user-home",
-    templateUrl: "./home.html",
-    styleUrls:['./home.css']
+    templateUrl: "./home.html"
 })
 export class HomeComponent extends BaseComponent {
 
