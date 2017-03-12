@@ -4,8 +4,9 @@ import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
 import { PadService } from "../../services/PadService";
 import { ScratchPad } from "../../models/scratchpad";
-import { select } from "@angular-redux/store/lib";
+import { select, NgRedux } from "@angular-redux/store/lib";
 import { IAppState } from "../../StateStore/Store";
+import { ScratchPadActions } from "../../StateStore/Actions/Actions";
 @Component({
 
     selector: 'sidebar',
@@ -20,12 +21,12 @@ export class SidebarComponent extends BaseComponent {
     @select('user') stateUser: Observable<any>;
     user: any;
     myscratchPads: Observable<ScratchPad[]>;
-    selected: ScratchPad = {  description: '', id: '', key: '', title: ''};
+    selected: ScratchPad = { description: '', id: '', key: '', title: '' };
     public model: ScratchPad = {
         description: '', id: '', key: '', title: ''
     };
 
-    constructor(private padService: PadService) {
+    constructor(private padService: PadService, private ngRedux: NgRedux<IAppState>) {
         super();
 
     }
@@ -61,5 +62,6 @@ export class SidebarComponent extends BaseComponent {
 
     select(pad: ScratchPad): void {
         this.selected = pad;
+        this.ngRedux.dispatch({ type: ScratchPadActions.SCRATCH_PAD_SELECTED, payload: pad });
     }
 }

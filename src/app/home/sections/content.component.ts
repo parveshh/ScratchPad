@@ -1,5 +1,9 @@
 import { BaseComponent } from "../../sharedcomponents/BaseComponent";
 import { Component } from "@angular/core";
+import { IAppState } from "../../StateStore/Store";
+import { select } from "@angular-redux/store";
+import { Observable } from "rxjs/Observable";
+import { ScratchPad } from "../../models/scratchpad";
 
 @Component({
 
@@ -10,9 +14,12 @@ import { Component } from "@angular/core";
 
 export class ContentComponent extends BaseComponent {
 
-    title: string = "Morning Notes";
+
+    @select((state: IAppState) => state.scratchpad) selectedScratchPad: Observable<ScratchPad>;
+    scratchPad: ScratchPad;
     constructor() {
         super();
+        this.subscriptions.push(this.selectedScratchPad.subscribe((pad) => this.scratchPad = pad));
     }
 
 }

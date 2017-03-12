@@ -1,15 +1,19 @@
 <div class="row" style="margin-left: 18%">
-    <div class="col-md-9">
 
-        <h3>{{title}} <small>Add New Notes</small> </h3>
+    <div class="col-md-9" *ngIf="scratchPad" >
+
+        <h3>{{(scratchPad)?.title}} <small>Add New Notes</small> </h3>
 
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9"  *ngIf="scratchPad">
         <div class="form-inline">
             <div class="form-group">
                 <input type="text" class="form-control input-lg" />
                 <button class="btn btn-success btn-lg">Add Note</button>
             </div>
         </div>
+    </div>
+    <div class="col-md-9" *ngIf="!scratchPad">
+        <h3>No ScratchPad Selected</h3>
     </div>
 </div>

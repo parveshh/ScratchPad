@@ -3,7 +3,7 @@ import { tassign } from "tassign";
 import { IAppState, InitialState } from "../../StateStore/Store";
 import { ScratchPad } from "../../models/scratchpad";
 
-
+//Ngreduc to pass selected scratchpad to content component
 export function scratchPadReducer(state: ScratchPad = InitialState.scratchpad, action: { type: ScratchPadActions, payload: ScratchPad }): ScratchPad {
 
     switch (action.type) {

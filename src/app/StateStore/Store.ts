@@ -5,6 +5,7 @@ import { NgRedux } from "@angular-redux/store";
 import { combineReducers, Reducer } from "redux";
 import { Actions } from "./Actions/Actions";
 import { ScratchPad } from "../models/scratchpad";
+import { scratchPadReducer } from "./Reducers/ScratchpadReducer";
 
 
 export interface IAppState {
@@ -22,5 +23,6 @@ export const InitialState: IAppState = {
 
 export const rootReducer = combineReducers<IAppState>({
     user: userReducer,
-    presence: presenceReducer
+    presence: presenceReducer,
+    scratchpad:scratchPadReducer
 });
