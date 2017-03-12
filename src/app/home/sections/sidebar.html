@@ -4,8 +4,8 @@
         <div class="scratchPads">
 
             <ul>
-                <li *ngFor="let pad of (myscratchPads|async)">
-                    <a href="#">{{pad.title}}</a>
+                <li *ngFor="let pad of (myscratchPads|async)" [ngClass]="{'active':selected.title == pad.title}">
+                    <a  (click)="select(pad);">{{pad.title}}</a>
                 </li>
 
             </ul>

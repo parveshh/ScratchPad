@@ -1,6 +1,4 @@
-html,body{
-   height: 100%;
-}
+
     .sideBar {
     position: absolute;
       top:53px;
@@ -62,6 +60,14 @@ html,body{
         padding: 5px;
               text-align: left;
               width: 100%;
+              cursor:pointer;
+    }
+    .scratchPads a li{
+       background-color: white;
+    }
+
+     .scratchPads li.active{
+        background-color: #EDEDED;
     }
 .scratchPads ul li:hover{
        background-color: #EDEDED;

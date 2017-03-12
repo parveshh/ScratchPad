@@ -20,6 +20,7 @@ export class SidebarComponent extends BaseComponent {
     @select('user') stateUser: Observable<any>;
     user: any;
     myscratchPads: Observable<ScratchPad[]>;
+    selected: ScratchPad = {  description: '', id: '', key: '', title: ''};
     public model: ScratchPad = {
         description: '', id: '', key: '', title: ''
     };
@@ -56,5 +57,9 @@ export class SidebarComponent extends BaseComponent {
             this.errors.next("input a valid title and description");
         }
 
+    }
+
+    select(pad: ScratchPad): void {
+        this.selected = pad;
     }
 }

@@ -15,6 +15,7 @@ import { HomeComponent } from "./home/home.component";
 import { SidebarComponent } from "./home/sections/sidebar.component";
 import { PadService } from "./services/PadService";
 import { AuthService } from "./services/AuthService";
+import { ContentComponent } from "./home/sections/content.component";
 
 export const firebaseConfig = {
 };
@@ -28,7 +29,7 @@ export const firebaseConfig = {
         FormsModule
     ],
     declarations: [AppComponent, LoginComponent,
-        NavComponent, RegisterComponent, HomeComponent, SidebarComponent],
+        NavComponent, RegisterComponent, HomeComponent, SidebarComponent,ContentComponent],
     bootstrap: [AppComponent],
     providers: [UserService, PadService, AuthService]
 
