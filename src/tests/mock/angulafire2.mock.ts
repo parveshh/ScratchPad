@@ -3,19 +3,18 @@ import { Thenable } from "firebase";
 import { FirebaseAuthState, AuthProviders } from "angularfire2";
 import { Observable } from "rxjs/Observable";
 
-export module AngularfireMock {
+export class AngularfireMock {
 
-    export class database {
+    auth = {
 
-    }
+        createUser : (user: RegisterModel): Thenable<FirebaseAuthState> => {
 
-    export class auth {
 
-        createUser = (user: RegisterModel): Thenable<FirebaseAuthState> => {
-
-            var fireauthState = new FirebaseAuthStateMock()
-            fireauthState.uid = 'xvbctyhsfdgtlsgdhd';
-            return new Promise<FirebaseAuthState>(() => fireauthState);
+            return new Promise<FirebaseAuthState>((resolve, reject) => {
+                var fireauthState = new FirebaseAuthStateMock()
+                fireauthState.uid = 'xvbctyhsfdgtlsgdhd';
+                resolve(fireauthState);
+            });
         }
     }
 

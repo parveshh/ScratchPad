@@ -15,9 +15,9 @@ import { IAppState } from "./StateStore/Store";
 export class AppComponent implements OnInit {
     public message: string;
     private _userService: UserService;
-    constructor(userService: UserService) {
+    constructor() {
         this.message = "Hello World";
-        this._userService = userService;
+        
     }
 
     ngOnInit() {
